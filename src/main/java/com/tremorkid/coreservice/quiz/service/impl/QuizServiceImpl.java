@@ -1,9 +1,9 @@
-package com.tremorkid.coreservice.app.quiz.service.impl;
+package com.tremorkid.coreservice.quiz.service.impl;
 
-import com.tremorkid.coreservice.app.quiz.beans.QuizBean;
-import com.tremorkid.coreservice.app.quiz.service.QuizService;
-import com.tremorkid.coreservice.app.quiz.model.Quiz;
-import com.tremorkid.coreservice.app.quiz.dao.QuizDAO;
+import com.tremorkid.coreservice.quiz.beans.QuizBean;
+import com.tremorkid.coreservice.quiz.service.QuizService;
+import com.tremorkid.coreservice.quiz.model.Quiz;
+import com.tremorkid.coreservice.quiz.dao.QuizDAO;
 import com.tremorkid.coreservice.shared.base.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.BeanUtils;

@@ -1,4 +1,4 @@
-package com.tremorkid.coreservice.app.quiz.beans;
+package com.tremorkid.coreservice.quiz.beans;
 
 import com.google.gson.annotations.Expose;
 import lombok.Getter;

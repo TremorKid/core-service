@@ -1,7 +1,7 @@
-package com.tremorkid.coreservice.app.quiz.controller;
+package com.tremorkid.coreservice.quiz.controller;
 
-import com.tremorkid.coreservice.app.quiz.beans.QuizBean;
-import com.tremorkid.coreservice.app.quiz.service.QuizService;
+import com.tremorkid.coreservice.quiz.beans.QuizBean;
+import com.tremorkid.coreservice.quiz.service.QuizService;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.log4j.Log4j2;
