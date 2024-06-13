@@ -1,6 +1,6 @@
-package com.tremorkid.coreservice.quiz.service;
+package com.tremorkid.coreservice.app.quiz.service;
 
-import com.tremorkid.coreservice.quiz.beans.QuizBean;
+import com.tremorkid.coreservice.app.quiz.beans.QuizBean;
 
 import java.util.List;
 

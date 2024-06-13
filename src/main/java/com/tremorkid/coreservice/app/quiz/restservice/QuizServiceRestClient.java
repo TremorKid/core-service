@@ -1,7 +1,7 @@
-package com.tremorkid.coreservice.quiz.restservice;
+package com.tremorkid.coreservice.app.quiz.restservice;
 
-import com.tremorkid.coreservice.quiz.beans.QuizRestRequest;
-import com.tremorkid.coreservice.quiz.beans.QuizRestResponse;
+import com.tremorkid.coreservice.app.quiz.beans.QuizRestRequest;
+import com.tremorkid.coreservice.app.quiz.beans.QuizRestResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

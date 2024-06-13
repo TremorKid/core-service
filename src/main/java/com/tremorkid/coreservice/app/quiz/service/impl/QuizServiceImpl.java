@@ -1,9 +1,9 @@
-package com.tremorkid.coreservice.quiz.service.impl;
+package com.tremorkid.coreservice.app.quiz.service.impl;
 
-import com.tremorkid.coreservice.quiz.beans.QuizBean;
-import com.tremorkid.coreservice.quiz.service.QuizService;
-import com.tremorkid.coreservice.quiz.model.Quiz;
-import com.tremorkid.coreservice.quiz.dao.QuizDAO;
+import com.tremorkid.coreservice.app.quiz.beans.QuizBean;
+import com.tremorkid.coreservice.app.quiz.dao.QuizDAO;
+import com.tremorkid.coreservice.app.quiz.model.Quiz;
+import com.tremorkid.coreservice.app.quiz.service.QuizService;
 import com.tremorkid.coreservice.shared.base.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.BeanUtils;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Log4j2
 @Service
@@ -35,14 +36,9 @@ public class QuizServiceImpl extends BaseService<Quiz, QuizBean> implements Quiz
 
     @Override
     public List<QuizBean> getAllQuizzes() {
-        List<QuizBean> list = new ArrayList<>();
-        List<Quiz> quizs =  quizRepository.findAll();
-
-        for (Quiz quiz : quizs) {
-            list.add(toBean(quiz, QuizBean.class));
-        }
-
-        return list;
+        return quizRepository.findAll().stream()
+                .map(quiz -> toBean(quiz, QuizBean.class))
+                .collect(Collectors.toList());
     }
 
     @Override

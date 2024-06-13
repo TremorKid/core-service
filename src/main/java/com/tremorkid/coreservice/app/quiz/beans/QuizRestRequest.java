@@ -1,4 +1,4 @@
-package com.tremorkid.coreservice.quiz.beans;
+package com.tremorkid.coreservice.app.quiz.beans;
 
 import com.google.gson.annotations.Expose;
 import lombok.Getter;
@@ -8,8 +8,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-public class QuizRestResponse implements Serializable {
-
+public class QuizRestRequest implements Serializable {
     @Expose
-    private String response;
+    private String request;
 }

@@ -1,4 +1,4 @@
-package com.tremorkid.coreservice.quiz.model;
+package com.tremorkid.coreservice.app.quiz.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
