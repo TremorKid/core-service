@@ -12,10 +12,16 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/tremor-kid-db
+    url: jdbc:mysql://localhost:3306/tremor_kid_db
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: admin123
+    hikari:
+      minimumIdle: 2
+      maximumPoolSize: 10
+      idleTimeout: 120000
+      connectionTimeout: 300000
+      leakDetectionThreshold: 300000
   jpa:
     open-in-view: false
     hibernate:
