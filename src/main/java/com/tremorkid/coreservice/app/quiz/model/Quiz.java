@@ -1,5 +1,6 @@
 package com.tremorkid.coreservice.app.quiz.model;
 
+import com.tremorkid.coreservice.shared.parse.BooleanToStringConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -54,4 +55,8 @@ public class Quiz implements Serializable {
 
     @Column(name = "TKQ_QUE10")
     private String quiz10;
+
+    @Column(name = "TKQ_IFQU")
+    @Convert(converter = BooleanToStringConverter.class)
+    private Boolean isFirstQuiz;
 }
