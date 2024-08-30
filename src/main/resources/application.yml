@@ -1,0 +1,52 @@
+server:
+  port: 8080
+  web:
+    allowed-origins:  http://localhost:4200/, http://localhost:5000/
+
+application:
+  rest:
+    client:
+      quiz-service: http://localhost:5000/
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mariadb://localhost:3306/tremor_kid_db
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: admin123
+    hikari:
+      minimumIdle: 2
+      maximumPoolSize: 10
+      idleTimeout: 120000
+      connectionTimeout: 300000
+      leakDetectionThreshold: 300000
+  jpa:
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+
+# swagger-ui custom path
+springdoc:
+  swagger-ui.path: '/swagger-ui.html'
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    operations-sorter: none
+  info:
+    version: 0.0.1-SNAPSHOT
+  server:
+    url: http://localhost:8080
+
+# Hibernate SQL Logging
+logging:
+  level:
+    root: info
+    org.hibernate:
+      sql: DEBUG
+      type: TRACE
