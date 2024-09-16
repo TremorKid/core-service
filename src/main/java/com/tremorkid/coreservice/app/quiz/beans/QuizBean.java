@@ -41,4 +41,7 @@ public class QuizBean implements Serializable {
 
     @Expose
     private String quiz10;
+
+    @Expose
+    private Boolean isFirstQuiz;
 }
