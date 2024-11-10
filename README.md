@@ -1,4 +1,4 @@
-# Core-Service v.1.0.0-SNAPSHOT 🧠
+# Core-Service v.1.0.1-SNAPSHOT 🧠
 
 ---
 
