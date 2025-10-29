@@ -1,9 +1,31 @@
 # Tienes que tener buildeado el proyecto usar [mvn clean install -DskipTests]
-FROM openjdk:17-alpine
+# FROM openjdk:17-alpine
+# LABEL authors="ecortez"
+
+# RUN mkdir /conf
+
+# COPY target/core-service-*.jar /app.jar
+
+# ENTRYPOINT exec java -Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -jar /app.jar --spring.config.location=/conf/application.yml
+# -------------------------------------------------------------------------------
 LABEL authors="ecortez"
 
-RUN mkdir /conf
+FROM eclipse-temurin:17-jdk AS builder
 
-COPY target/core-service-*.jar /app.jar
+WORKDIR /app
 
-ENTRYPOINT exec java -Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -jar /app.jar --spring.config.location=/conf/application.yml
+COPY . .
+
+RUN chmod +x mvnw
+
+RUN ./mvnw clean package -DskipTests
+
+FROM eclipse-temurin:17-jre
+
+WORKDIR /app
+
+COPY --from=builder /app/target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
