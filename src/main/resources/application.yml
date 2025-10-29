@@ -10,8 +10,8 @@ application:
 
 spring:
   datasource:
-    url: jdbc:mysql://${host_db}:${port_db}/${database}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://${host_db}:${port_db}/${database}
+    driver-class-name: org.postgresql.Driver
     username: ${user_db}
     password: ${pass_db}
   jpa:
@@ -21,7 +21,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # swagger-ui
 springdoc:
