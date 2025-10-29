@@ -8,9 +8,9 @@
 
 # ENTRYPOINT exec java -Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -jar /app.jar --spring.config.location=/conf/application.yml
 # -------------------------------------------------------------------------------
-LABEL authors="ecortez"
-
 FROM eclipse-temurin:17-jdk AS builder
+
+LABEL authors="ecortez"
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY . .
 
 RUN chmod +x mvnw
 
-RUN ./mvnw clean package -DskipTests
+RUN mvnw clean package -DskipTests
 
 FROM eclipse-temurin:17-jre
 
